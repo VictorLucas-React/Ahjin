@@ -1,6 +1,25 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', Times, serif;
-    
+    font-family: 'Times New Roman', Times, serif; 
+
 }
+
+body{
+    background-image:url("https://free4kwallpapers.com/uploads/originals/2021/11/24/sung-jin-woo-solo-leveling-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: 100cqmax;
+}
+
+ div.Home h1{
+    border-style: solid ;
+    text-align: center;
+    margin: 30px;
+}
+div.Home {
+    text-align: center;
+    padding: auto;
+    margin: 10px;
+   
+}
+

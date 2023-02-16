@@ -9,13 +9,12 @@ const Home = () =>{
     }
 
     return(
-       <div>
-           <Navbar />
-        <h1>Home</h1>        
-        <Loader load={isLoard} />
-        {isLoard ? (<p>Carregando...</p>): (<p></p>)}
-        <p>Componente rederiza conforme o estado</p>
-        <button onClick={hadleStateComponet}>Mudar estado</button>
+       <div className='Home'>
+            <Navbar className='navegador' />
+            <h1>Home</h1>        
+            <Loader load={isLoard} />
+            {isLoard ? (<p>Carregando...</p>): (<p></p>)}
+                <button onClick={hadleStateComponet}>Mudar estado</button>
        </div>
        
 
