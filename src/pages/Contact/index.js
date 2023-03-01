@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar";
-import {useState, UseState} from 'react'
+import {useState} from 'react'
 
 const Contact = () =>{
     const [data, setdata] = useState({})
