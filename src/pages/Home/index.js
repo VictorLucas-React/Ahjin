@@ -25,7 +25,7 @@ const Home = () =>{
 
     return(
        <div className='Home'>
-            <Navbar className='navegador' />
+            <Navbar />
             <h1>Home</h1>
             {data.map((el, index) => (
                 <div id='ficha' key={index}>
