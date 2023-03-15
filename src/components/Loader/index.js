@@ -1,10 +1,12 @@
+import RMLoader from '../../assents/gif/sung.gif'
+
 const Loader = ({load}) => {
 
-    return (
-        <div>
-            {load && (<h3>Carregando...</h3>)}
-            
-        </div>
-    )
+  return(
+    <div>
+      { load && (<img src={RMLoader} alt="Carregando" />)}
+    </div>
+  )
 }
+
 export default Loader

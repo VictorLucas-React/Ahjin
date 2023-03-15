@@ -1,54 +1,52 @@
-import Navbar from '../../components/Navbar'
-import { useState, useEffect } from 'react';
-import Loader from '../../components/Loader';
-import axios from 'axios'
-import '../Home/style.css'
+import Navbar from "../../components/Navbar"
+import Loader from '../../components/Loader'
+import { useState, useEffect } from 'react'
+import axios from 'axios';
 
+import { mainDefault } from '../../MOCK/main'
 
-const Home = () =>{
-    const[isLoard, setIsLoad] = useState(false);
-    const [ data, setData] = useState([])
+import Footer from "../../components/Footer";
+import Card from "../../components/Card";
 
-    const hadleStateComponet = () => {
-        setIsLoad (!isLoard)
-    }
+import styles from './style.module.css'
 
-    useEffect(() => {
-        setIsLoad(true)
-        axios.get('https://rickandmortyapi.com/api/character').then(
-            res => {
-                setData(res.data.results)
-            }
-        ).catch( e => console.log("Erro",e))
-        .finally(() => setIsLoad(false))
-    }, [])
+const Home = () => {
+  const [ isLoad, setIsLoad ] = useState(false);
+  const [ data, setData ] = useState([]);
 
-    return(
-       <div className='Home'>
-            <Navbar />
-            <h1>Home</h1>
-            {data.map((el, index) => (
-                <div id='ficha' key={index}>
-                    <h2>{el.name}</h2>
-                    <img src={el.image} alt={el.name}/>
-                    <p>{el.status}</p>
-                    <p>{el.species}</p>
-                    <p>{el.type}</p>
-                    <p>{el.gender}</p>
-                    <p>{el.origin?.name}</p>
-                    <p>{el.location?.name}</p>
-                    <p>Episódios{el.episode.length}</p>
-
-
-                </div>
-            ))}        
-            <Loader load={isLoard} />
-            {isLoard ? (<p>Carregando...</p>): (<p></p>)}
-            {hadleStateComponet}
-       </div>
-       
-
+  useEffect( () => {
+    setIsLoad(true)
+    axios.get('https://rickandmortyapi.com/api/character')
+    .then(
+      res => {
+        setData(res.data.results)
+      }
     )
+    .catch( e => console.log("Erro", e))
+    .finally(() => setIsLoad(false))
+  }, [])
+
+  return(
+    <div>
+      <Navbar navItens={mainDefault} />
+      <div className="container">
+        <div className={styles.content}>
+          {data.map( (el, index) => (
+            <Card 
+              key={index} 
+              name={el.name} 
+              image={el.image} 
+              gender={el.gender} 
+              origin={el.origin} 
+              episode={el.episode}
+            />
+          ))}
+        </div>
+        <Loader load={isLoad} />
+      </div>
+      <Footer footerText="Todos os direitos reservados | Div Magalu" />
+    </div>
+  )
 }
 
-export default Home;
+export default Home

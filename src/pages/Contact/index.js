@@ -1,36 +1,20 @@
-import Navbar from "../../components/Navbar";
-import {useState} from 'react'
-import axios from "axios"
-import '../Contact/style.css'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import Form from '../../components/Form'
 
+import { mainDefault } from '../../MOCK/main'
 
-const Contact = () =>{
-    const [data, setdata] = useState({})
-    const submitFormData = (e) => {
-        e.preventDefault()       
-        axios.post('https://webhook.site/0e88e581-83ce-4ada-b379-55b7d4fbc8b3', data)
-        .then(res => {
-            alert(res.status)
-        }).catch (()=> alert('Ops, algo deu errado!'))
-    }
+const Contact = () => {
 
-    return(
-        <div >
-            <Navbar />
-            <div id="contato">
-            <h1>Contato</h1>
-            <form onSubmit={submitFormData}>
-                <input type='text' placeholder="Nome" onChange={e=> setdata({...data, nome: e.target.value})}/>
-                <input type='text' placeholder="Email" onChange={e=> setdata({...data, email: e.target.value})}/>
-                <input type='text' placeholder="Telefone" onChange={e=> setdata({...data, telefone: e.target.value})}/>
-                <input type='submit' value="Cadastrar"/>
-            </form>
-            </div>
-
-        </div>
-        
-
-    )
+  return(
+    <>
+      <Navbar  navItens={mainDefault}/>
+      <div className='container'>
+        <Form />
+      </div>
+      <Footer footerText="Todos os direitos reservados | Div Magalu" />
+    </>
+  )
 }
 
-export default Contact;
+export default Contact

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Routes from './routes';
+import Routes from './routes'
 import reportWebVitals from './reportWebVitals';
 
 import './index.css'
@@ -8,9 +8,8 @@ import './index.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <Routes />
+    <Routes />
   </React.StrictMode>
 );
-
 
 reportWebVitals();

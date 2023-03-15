@@ -1,0 +1,27 @@
+.card{
+  max-width: 250px;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #160731;
+  color: #fafafa;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif, cursive;
+  background-image: url(https://images6.alphacoders.com/129/1293436.jpg);
+  background-repeat: no-repeat;
+  width: auto;
+  background-attachment: fixed;
+}
+
+.titleElement{
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  margin: 5px
+}
+
+div{
+  background-image: url(https://images6.alphacoders.com/129/1293436.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: 100%;
+}
